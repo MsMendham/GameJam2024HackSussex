@@ -102,8 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 20
   rotationSpeed: 0.5
-  maxLinearVel: {x: 50, y: 50}
-  maxAngularVel: 0
+  maxLinearVel: 10
+  maxAngularVel: 100
+  linVel: {x: 0, y: 0}
 --- !u!50 &1051473925156724169
 Rigidbody2D:
   serializedVersion: 4
