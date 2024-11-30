@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6436893437209853157}
   - component: {fileID: 374522421497083625}
   - component: {fileID: 1147801679975236103}
+  - component: {fileID: 4081216863864802625}
   m_Layer: 0
   m_Name: Small Asteroid
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.27, y: 1.94, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+  m_Sprite: {fileID: 2123289889, guid: e617244db2dbd78469de57beda110d97, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,4 +120,44 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
+--- !u!114 &4081216863864802625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3820644681905126993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d57766c1775b44aa42402fa6087370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smashSpeed: 3
+  sprites:
+  - {fileID: 2123289889, guid: e617244db2dbd78469de57beda110d97, type: 3}
+  - {fileID: -1574121920, guid: e617244db2dbd78469de57beda110d97, type: 3}
+  - {fileID: 1749854561, guid: e617244db2dbd78469de57beda110d97, type: 3}
+  - {fileID: -1167425072, guid: e617244db2dbd78469de57beda110d97, type: 3}
+  - {fileID: -1180827714, guid: e617244db2dbd78469de57beda110d97, type: 3}
+  - {fileID: 123747270, guid: e617244db2dbd78469de57beda110d97, type: 3}
+  smashSprites:
+  - {fileID: 1307341349, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: 1127255145, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: 1040628856, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: 1192523921, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: 316517226, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: -245775122, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: -1591866043, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: 1663810509, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: -264676137, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: 515465555, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: 1334987308, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: -844413406, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: -1986659602, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: 1249556032, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: 778338025, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: -1336789220, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: -332020309, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  - {fileID: 344108974, guid: eb5c245c1593c7f42a6f103eeb950896, type: 3}
+  smashPrefab: {fileID: 6029265253072563055, guid: ee248818c8cba5248a91b2a489976ad0, type: 3}
