@@ -7,6 +7,8 @@ public class ShipMovement : MonoBehaviour
 {
     [SerializeField] private float thrust;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private float maxLinearVel;
+    [SerializeField] private float maxAngularVel;
 
     private Rigidbody2D rb;
 
