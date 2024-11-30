@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,8 @@ public class ShipMovement : MonoBehaviour
 
     private Vector2 moveValue;
     private float rotValue;
+
+    public Vector2 linVel;
 
     private void Awake()
     {
@@ -34,16 +37,19 @@ public class ShipMovement : MonoBehaviour
     {
         applyMove();
         applyRotate();
+        linVel = rb.velocity;
     }
 
     public void applyMove()
     {
         rb.AddRelativeForce(moveValue * thrust * new Vector2(0.5f, 1));
+        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxLinearVel);
     }
 
     public void applyRotate()
     {
         rb.AddTorque(rotValue * rotationSpeed);
+        rb.angularVelocity = Mathf.Clamp(rb.angularVelocity,-maxAngularVel,maxAngularVel);
     }
 
     public void OnMove(InputAction.CallbackContext context)
