@@ -137,6 +137,13 @@ MonoBehaviour:
   maxLinearVel: 10
   maxAngularVel: 100
   linVel: {x: 0, y: 0}
+  sprites:
+  - {fileID: -546659363, guid: 6d34684d11c40704bbf6e8d483d1a5ef, type: 3}
+  - {fileID: -1787062039, guid: 6d34684d11c40704bbf6e8d483d1a5ef, type: 3}
+  - {fileID: 880016206, guid: 6d34684d11c40704bbf6e8d483d1a5ef, type: 3}
+  - {fileID: 1314671682, guid: 6d34684d11c40704bbf6e8d483d1a5ef, type: 3}
+  - {fileID: -742709042, guid: 6d34684d11c40704bbf6e8d483d1a5ef, type: 3}
+  - {fileID: 2098859516, guid: 6d34684d11c40704bbf6e8d483d1a5ef, type: 3}
 --- !u!50 &1051473925156724169
 Rigidbody2D:
   serializedVersion: 4

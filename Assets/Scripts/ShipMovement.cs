@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,9 +19,16 @@ public class ShipMovement : MonoBehaviour
 
     public Vector2 linVel;
 
+    private SpriteRenderer _spriteRenderer;
+    [SerializeField]
+    private Sprite[] sprites;
+    private int spriteVersion = 0;
+    
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Start()
@@ -31,7 +39,7 @@ public class ShipMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Sprites();
     }
     private void FixedUpdate()
     {
@@ -60,5 +68,41 @@ public class ShipMovement : MonoBehaviour
     public void OnRotate(InputAction.CallbackContext context)
     {
         rotValue = context.ReadValue<float>();
+    }
+
+    public void Sprites()
+    {
+        //0 is defualt, forward, strafe right, strafe left, rotate right, left
+        if (rotValue < 0)
+        {
+            // rotate right sprite
+            spriteVersion = 4;
+        }
+        if (rotValue > 0)
+        {
+            // rotate left sprite
+            spriteVersion = 5;
+        }
+        if (moveValue.x > 0)
+        {
+            // strafe right sprite
+            spriteVersion = 2;
+        }
+        if (moveValue.x < 0)
+        {
+            // strafe left sprite
+            spriteVersion = 3;
+        }
+        if (moveValue.y > 0)
+        {
+            // forward sprite
+            spriteVersion = 1;
+        }
+        if (moveValue.y == 0 && moveValue.x == 0 && rotValue == 0)
+        {
+            //deafult sprite
+            spriteVersion = 0;
+        }
+        _spriteRenderer.sprite = sprites[spriteVersion];
     }
 }
