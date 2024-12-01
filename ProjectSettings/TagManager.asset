@@ -7,6 +7,9 @@ TagManager:
   - Planet
   - Asteroid
   - Asteroid Field
+  - LeftTeleport
+  - RightTeleport
+  - Platform
   layers:
   - Default
   - TransparentFX
