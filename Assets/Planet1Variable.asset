@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a12d4a52d567249bc0ead21b2b8d85, type: 3}
   m_Name: Planet1Variable
   m_EditorClassIdentifier: 
-  windSpeed: {x: -10, y: 0}
-  gravity: 1
+  windSpeed: {x: -20, y: 0}
+  gravity: 1.3

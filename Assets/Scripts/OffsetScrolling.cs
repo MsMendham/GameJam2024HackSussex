@@ -8,6 +8,7 @@ public class OffsetScrolling : MonoBehaviour
 
     private Renderer renderer;
     private Vector2 savedOffset;
+    [SerializeField] private GameObject player;
 
     void Start()
     {
@@ -16,8 +17,10 @@ public class OffsetScrolling : MonoBehaviour
 
     void Update()
     {
-        float x = Mathf.Repeat(Time.time * scrollSpeed, 1);
-        Vector2 offset = new Vector2(x, 0);
+        
+        Vector2 offset = player.transform.position *scrollSpeed;
         renderer.sharedMaterial.SetTextureOffset("_MainTex", offset);
+
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y,transform.position.z);
     }
 }

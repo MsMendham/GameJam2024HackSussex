@@ -9,6 +9,7 @@ public class LandingContolScript : MonoBehaviour
     [SerializeField] private float sidethrust;
     [SerializeField] private float rotSpeed;
     [SerializeField] private Sprite[] sprites;
+    [SerializeField] private PlanetVariables planetInfo;
 
     private float upValue;
     private float sideValue;
@@ -16,11 +17,13 @@ public class LandingContolScript : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
 
+
     // Start is called before the first frame update
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        rb.gravityScale = planetInfo.gravity;
     }
 
     // Update is called once per frame
@@ -34,6 +37,7 @@ public class LandingContolScript : MonoBehaviour
         applyUp();
         applySideways();
         applyRotate();
+        applyWind();
     }
 
     private void applyUp()
@@ -48,6 +52,11 @@ public class LandingContolScript : MonoBehaviour
     private void applyRotate()
     {
         rb.AddTorque(rotValue * rotSpeed);
+    }
+
+    private void applyWind()
+    {
+        rb.AddRelativeForce(planetInfo.windSpeed);
     }
 
     public void OnUp(InputAction.CallbackContext context)
