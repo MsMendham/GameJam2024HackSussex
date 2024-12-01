@@ -11,6 +11,7 @@ public class ShipMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float maxLinearVel;
     [SerializeField] private float maxAngularVel;
+    [SerializeField] private AudioSource audioSrc;
 
     private Rigidbody2D rb;
 
@@ -23,6 +24,8 @@ public class ShipMovement : MonoBehaviour
     [SerializeField]
     private Sprite[] sprites;
     private int spriteVersion = 0;
+
+    
     
 
     private void Awake()
@@ -77,32 +80,55 @@ public class ShipMovement : MonoBehaviour
         {
             // rotate right sprite
             spriteVersion = 4;
+            playSound();
         }
         if (rotValue > 0)
         {
             // rotate left sprite
             spriteVersion = 5;
+            playSound();
         }
         if (moveValue.x > 0)
         {
             // strafe right sprite
             spriteVersion = 2;
+            playSound();
         }
         if (moveValue.x < 0)
         {
             // strafe left sprite
             spriteVersion = 3;
+            playSound();
         }
         if (moveValue.y > 0)
         {
             // forward sprite
             spriteVersion = 1;
+            playSound();
         }
         if (moveValue.y == 0 && moveValue.x == 0 && rotValue == 0)
         {
             //deafult sprite
             spriteVersion = 0;
+            stopSound();
         }
         _spriteRenderer.sprite = sprites[spriteVersion];
+    }
+
+    private void playSound()
+    {
+        if (!audioSrc.isPlaying)
+        {
+            Debug.Log("play");
+            audioSrc.Play();
+        }
+    }
+    private void stopSound()
+    {
+        if (audioSrc.isPlaying)
+        {
+            Debug.Log("Stop");
+            audioSrc.Stop();
+        }
     }
 }

@@ -11,12 +11,14 @@ public class SmallAsteridScript : MonoBehaviour
     [SerializeField] private GameObject smashPrefab;
     private SpriteRenderer SR;
     private int randomSpriteNo;
+    [SerializeField] private AudioSource AS;
 
     private void Awake()
     {
         SR = GetComponent<SpriteRenderer>();
         randomSpriteNo = Random.Range(0, sprites.Length);
         SR.sprite = sprites[randomSpriteNo];
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,6 +27,7 @@ public class SmallAsteridScript : MonoBehaviour
             Debug.Log(collision.relativeVelocity.magnitude);
             if (collision.relativeVelocity.magnitude >= smashSpeed)
             {
+                AS.Play();
                 GameObject piece1 = Instantiate(smashPrefab, transform.position, new Quaternion(0, 0, 0, 0));
                 GameObject piece2 = Instantiate(smashPrefab, transform.position, new Quaternion(0, 0, 0, 0));
                 GameObject piece3 = Instantiate(smashPrefab, transform.position, new Quaternion(0, 0, 0, 0));
