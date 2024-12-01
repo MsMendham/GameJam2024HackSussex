@@ -163,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f2514f9ce819c440aba9de993940e54
-      internalID: -119203416
+      spriteID: bd0c8d1603a9b154b9e39ef2d2cf6bd4
+      internalID: 1730350773
       vertices: []
       indices: 
       edges: []
@@ -184,8 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9129bd6851e482c48b3370346931d1df
-      internalID: 350891678
+      spriteID: cde1129e7e19fdf4b901e0d8cb133744
+      internalID: 293687288
       vertices: []
       indices: 
       edges: []
@@ -205,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0c954eb3dd717448b4f2bea4d1faaed
-      internalID: -968170672
+      spriteID: 4fe09937a8e458543a4c575aedf23d57
+      internalID: 1777967215
       vertices: []
       indices: 
       edges: []
@@ -226,8 +226,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 770255180596c114da817d4f0212eb36
-      internalID: -1551575894
+      spriteID: 6ebdb8036ab6a7d4cbb1ee42001294bd
+      internalID: 16378564
       vertices: []
       indices: 
       edges: []
@@ -243,10 +243,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      planets_0: -119203416
-      planets_1: 350891678
-      planets_2: -968170672
-      planets_3: -1551575894
+      planets_0: 1730350773
+      planets_1: 293687288
+      planets_2: 1777967215
+      planets_3: 16378564
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
