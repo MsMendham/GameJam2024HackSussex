@@ -85,13 +85,25 @@ public class LandingContolScript : MonoBehaviour
         }
         if(rotValue > 0)
         {
-            spriteIndex = 4;
+            spriteIndex = 5;
         }
         if(rotValue < 0)
         {
-            spriteIndex = 5;
+            spriteIndex = 4;
         }
 
         sr.sprite = sprites[spriteIndex];
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("LeftTeleport"))
+        {
+            
+            transform.position = new Vector2(47-(transform.position.x+49), transform.position.y);
+        }
+        if (collision.CompareTag("RightTeleport"))
+        {
+            transform.position = new Vector2(-47-(transform.position.x-49), transform.position.y);
+        }
     }
 }
