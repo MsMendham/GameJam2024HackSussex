@@ -8,5 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/RedPlanet.unity
+    guid: 6217881df3c3c9e4a827e553f27b47da
+  - enabled: 1
+    path: Assets/Scenes/GreenPlanet.unity
+    guid: 92b5fe45de07e9341b9cde313674db0b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a57465fb75586674395c37e808560283, type: 2}

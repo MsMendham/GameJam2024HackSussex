@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShipStats : MonoBehaviour
 {
@@ -46,16 +47,26 @@ public class ShipStats : MonoBehaviour
     {
         frontHealth -= dmg;
         uiManager.reduceBowHealth(dmg/initfrontHealth);
-        Debug.Log(dmg / initfrontHealth);
+        checkIfDead();
     }
     public void middleHit(int dmg)
     {
         middleHealth -= dmg;
         uiManager.reduceCargoHealth(dmg / initmiddleHealth);
+        checkIfDead();
     }
     public void backHit (int dmg)
     {
         backHealth -= dmg;
         uiManager.reduceBridgeHealth(dmg / initbackHealth);
+        checkIfDead();
+    }
+
+    private void checkIfDead()
+    {
+        if (frontHealth <= 0 || middleHealth <= 0 || backHealth <= 0)
+        {
+            SceneManager.LoadScene("Game Over");
+        }
     }
 }

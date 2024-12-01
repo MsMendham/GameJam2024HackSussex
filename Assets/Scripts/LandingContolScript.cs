@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class LandingContolScript : MonoBehaviour
 {
@@ -113,6 +114,10 @@ public class LandingContolScript : MonoBehaviour
         if (collision.CompareTag("RightTeleport"))
         {
             transform.position = new Vector2(-47-(transform.position.x-49), transform.position.y);
+        }
+        if (collision.CompareTag("SkyCollider"))
+        {
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }
